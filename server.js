@@ -117,6 +117,13 @@ app.put('/api/friends/:id', authenticator, (req, res) => {
   }
 });
 
+app.post("/api/logout", (req, res) => {
+  //remove token from database
+  res.status(200).json({
+    payload: token
+  });
+});
+
 app.delete('/api/friends/:id', authenticator, (req, res) => {
   const { id } = req.params;
 
